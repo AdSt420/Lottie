@@ -1,0 +1,38 @@
+{
+  "v": "5.9.0",
+  "fr": 29.9700012207031,
+  "ip": 0,
+  "op": 482.000019632262,
+  "w": 1080,
+  "h": 1080,
+  "nm": "A animation",
+  "ddd": 0,
+  "assets": [],
+  "fonts": {
+    "list": [
+      {
+        "fName": "VinaSans-Regular",
+        "fFamily": "Vina Sans",
+        "fStyle": "Regular",
+        "ascent": 69.9996948242188
+      }
+    ]
+  },
+  "layers": [
+    {
+      "ddd": 0,
+      "ind": 1,
+      "ty": 5,
+      "nm": "ADAM STROEMSTEDT VISUAL DESIGN",
+      "sr": 1,
+      "ks": {
+        "o": {
+          "a": 0,
+          "k": 100,
+          "ix": 11
+        },
+        "r": {
+          "a": 0,
+          "k": 0,
+          "ix": 10,
+          "x": "var $bm_rt;\nvar result;\nresult = getAnimationComposerPresetValue();\nfunction getAnimationComposerPresetValue() {\n    var bL = thisLayer;\n    var tTrI = null;\n    var tTrO = null;\n    if (bL.marker.numKeys > 0) {\n        var acmp = 'zzzzzzzzzzzzzzz_AC';\n        for (var i = 1; i <= bL.marker.numKeys; i++) {\n            var m = bL.marker.key(i);\n            var p = m.parameters;\n            if (p.hasOwnProperty(acmp + 'MarkerEnabled') && p.hasOwnProperty(acmp + 'MarkerType') && p.hasOwnProperty(acmp + 'MarkerAppPresetType')) {\n                if (p[acmp + 'MarkerEnabled'] != '1') {\n                    continue;\n                }\n                switch (p[acmp + 'MarkerAppPresetType']) {\n                case '1': {\n                        tTrI = m.time;\n                        break;\n                    }\n                case '2': {\n                        tTrO = m.time;\n                        break;\n                    }\n                }\n            }\n        }\n    }\n    ;\n    function acAngleValP(fxN, stN, dV) {\n        try {\n            return bL.effect(fxN)(stN);\n        } catch (e) {\n            return dV;\n        }\n    }\n    function acSliderValP(fxN, stN, dV) {\n        try {\n            return bL.effect(fxN)(stN);\n        } catch (e) {\n            return dV;\n        }\n    }\n    function acValAdd(val) {\n        acAccA = $bm_sum(acAccA, val);\n    }\n    function upACo(ac, tIn, dIn, tOut, dOut, eFi, eFo) {\n        if (dIn < 0) {\n            dIn = 0;\n        }\n        if (dOut < 0) {\n            dOut = 0;\n        }\n        ac.fade = 1;\n        if (t < tOut) {\n            if (t < $bm_sum(tIn, dIn)) {\n                if (dIn == 0) {\n                    ac.fade = 0;\n                } else {\n                    ac.fade = $bm_div($bm_sub(t, tIn), dIn);\n                    if (ac.fade < 0) {\n                        ac.fade = 0;\n                    }\n                    if (ac.fade > 1) {\n                        ac.fade = 1;\n                    }\n                    if (eFi) {\n                        ac.fade = eFi(ac.fade);\n                    }\n                }\n            }\n        } else {\n            if (dOut == 0) {\n                ac.fade = 0;\n            } else {\n                ac.fade = $bm_div($bm_sub(t, tOut), dOut);\n                if (ac.fade < 0) {\n                    ac.fade = 0;\n                }\n                if (ac.fade > 1) {\n                    ac.fade = 1;\n                }\n                if (eFo) {\n                    ac.fade = eFo(ac.fade);\n                }\n                ac.fade = $bm_sub(1, ac.fade);\n            }\n        }\n        ac
